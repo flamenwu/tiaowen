@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="书卷">
+  <rect x="22" y="26" width="50" height="108" rx="8" fill="#f6e7cc" stroke="#b88a35" stroke-width="4"/>
+  <rect x="72" y="26" width="66" height="108" rx="8" fill="#fffaf2" stroke="#b88a35" stroke-width="4"/>
+  <path d="M72 34v92" stroke="#d8b977" stroke-width="3"/>
+  <path d="M88 52h32M88 70h28M88 88h34M38 54h20M38 72h18M38 90h20" stroke="#9f2f25" stroke-width="5" stroke-linecap="round"/>
+</svg>

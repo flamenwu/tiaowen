@@ -1,0 +1,5 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="印章">
+  <rect x="8" y="8" width="80" height="80" rx="10" fill="#9f2f25"/>
+  <rect x="18" y="18" width="60" height="60" rx="5" fill="none" stroke="#f8e6c7" stroke-width="4"/>
+  <path d="M31 31h34v8H53v10h12v8H53v13H43V57H31v-8h12V39H31z" fill="#f8e6c7"/>
+</svg>

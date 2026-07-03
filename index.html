@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>铁板神数条文查询</title>
+  <meta name="description" content="输入编号，查询铁板神数条文与详解。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="search-panel" aria-labelledby="page-title">
+      <div class="brand-row">
+        <img class="brand-mark" src="assets/seal.svg" alt="" />
+        <div>
+          <p class="eyebrow">条文检索</p>
+          <h1 id="page-title">铁板神数条文查询</h1>
+        </div>
+      </div>
+
+      <form class="query-form" id="query-form" autocomplete="off">
+        <label for="query-input">编号</label>
+        <div class="input-row">
+          <input id="query-input" name="q" inputmode="numeric" placeholder="例如 1001" aria-describedby="search-count" />
+          <button type="submit">查询</button>
+        </div>
+      </form>
+
+      <div class="quick-row" aria-label="快速查看">
+        <button type="button" data-example="1001">1001</button>
+        <button type="button" data-example="1999">1999</button>
+        <button type="button" data-example="6999">6999</button>
+        <button type="button" data-example="13000">13000</button>
+      </div>
+
+      <p id="search-count" class="meta-line">共收录 <strong id="total-count">0</strong> 条，编号范围 <strong id="range-label">-</strong></p>
+    </section>
+
+    <section class="result-panel" aria-live="polite">
+      <div id="empty-state" class="empty-state">
+        <img src="assets/book.svg" alt="" />
+        <p>输入编号后，条文和详解会显示在这里。</p>
+      </div>
+
+      <article id="result-card" class="result-card" hidden>
+        <div class="result-head">
+          <p class="result-id" id="result-id"></p>
+          <button type="button" id="copy-button" title="复制当前条文">复制</button>
+        </div>
+        <h2 id="result-text"></h2>
+        <div id="result-detail" class="detail-text"></div>
+      </article>
+
+      <div id="not-found" class="not-found" hidden>
+        <p>没有找到这个编号。</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
