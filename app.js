@@ -3,8 +3,6 @@ const byId = new Map(records.map((item) => [String(item.id).trim(), item]));
 
 const form = document.querySelector("#query-form");
 const input = document.querySelector("#query-input");
-const totalCount = document.querySelector("#total-count");
-const rangeLabel = document.querySelector("#range-label");
 const emptyState = document.querySelector("#empty-state");
 const resultCard = document.querySelector("#result-card");
 const notFound = document.querySelector("#not-found");
@@ -61,14 +59,6 @@ function lookup(value) {
   else showNotFound(id);
 }
 
-function initSummary() {
-  totalCount.textContent = records.length.toLocaleString("zh-CN");
-  const ids = records.map((item) => Number(item.id)).filter(Number.isFinite);
-  if (ids.length) {
-    rangeLabel.textContent = `${Math.min(...ids)} - ${Math.max(...ids)}`;
-  }
-}
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   lookup(input.value);
@@ -76,10 +66,6 @@ form.addEventListener("submit", (event) => {
 
 input.addEventListener("input", () => {
   input.value = normalizeId(input.value);
-});
-
-document.querySelectorAll("[data-example]").forEach((button) => {
-  button.addEventListener("click", () => lookup(button.dataset.example));
 });
 
 copyButton.addEventListener("click", async () => {
@@ -94,6 +80,5 @@ copyButton.addEventListener("click", async () => {
   }
 });
 
-initSummary();
 const initialId = new URLSearchParams(window.location.search).get("id");
 if (initialId) lookup(initialId);

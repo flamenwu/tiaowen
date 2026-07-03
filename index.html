@@ -21,19 +21,10 @@
       <form class="query-form" id="query-form" autocomplete="off">
         <label for="query-input">编号</label>
         <div class="input-row">
-          <input id="query-input" name="q" inputmode="numeric" placeholder="例如 1001" aria-describedby="search-count" />
+          <input id="query-input" name="q" inputmode="numeric" placeholder="例如 1001" />
           <button type="submit">查询</button>
         </div>
       </form>
-
-      <div class="quick-row" aria-label="快速查看">
-        <button type="button" data-example="1001">1001</button>
-        <button type="button" data-example="1999">1999</button>
-        <button type="button" data-example="6999">6999</button>
-        <button type="button" data-example="13000">13000</button>
-      </div>
-
-      <p id="search-count" class="meta-line">共收录 <strong id="total-count">0</strong> 条，编号范围 <strong id="range-label">-</strong></p>
     </section>
 
     <section class="result-panel" aria-live="polite">

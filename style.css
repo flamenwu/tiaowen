@@ -24,13 +24,13 @@ body {
 }
 
 .app-shell {
-  width: min(1120px, calc(100% - 32px));
+  width: min(680px, calc(100% - 20px));
   min-height: 100vh;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 14px 0 24px;
   display: grid;
-  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   align-items: start;
 }
 
@@ -42,15 +42,13 @@ body {
 }
 
 .search-panel {
-  position: sticky;
-  top: 24px;
-  padding: 28px;
+  padding: 16px;
   border-radius: 8px;
 }
 
 .result-panel {
-  min-height: 520px;
-  padding: 28px;
+  min-height: 320px;
+  padding: 16px;
   border-radius: 8px;
 }
 
@@ -61,8 +59,8 @@ body {
 }
 
 .brand-mark {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   flex: 0 0 auto;
 }
 
@@ -75,13 +73,13 @@ body {
 
 h1 {
   margin: 0;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.18;
   letter-spacing: 0;
 }
 
 .query-form {
-  margin-top: 30px;
+  margin-top: 18px;
 }
 
 label {
@@ -129,14 +127,6 @@ button {
 
 button:hover { background: var(--accent-dark); }
 
-.quick-row {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.quick-row button,
 #copy-button {
   min-height: 36px;
   color: var(--accent-dark);
@@ -144,19 +134,11 @@ button:hover { background: var(--accent-dark); }
   border: 1px solid rgba(159, 47, 37, 0.18);
 }
 
-.quick-row button:hover,
 #copy-button:hover { background: #f1d7c6; }
-
-.meta-line {
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
 
 .empty-state,
 .not-found {
-  min-height: 460px;
+  min-height: 280px;
   display: grid;
   place-items: center;
   align-content: center;
@@ -204,16 +186,16 @@ button:hover { background: var(--accent-dark); }
 
 h2 {
   margin: 0;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.45;
   letter-spacing: 0;
 }
 
 .detail-text {
   display: grid;
-  gap: 14px;
-  line-height: 1.9;
-  font-size: 17px;
+  gap: 12px;
+  line-height: 1.85;
+  font-size: 16px;
 }
 
 .detail-text p {
@@ -242,6 +224,5 @@ h2 {
   h2 { font-size: 22px; }
 
   .input-row { grid-template-columns: 1fr; }
-  .quick-row { grid-template-columns: repeat(2, 1fr); }
   .empty-state, .not-found { min-height: 300px; }
 }
