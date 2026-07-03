@@ -92,7 +92,7 @@ label {
 
 .input-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 88px;
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
@@ -123,6 +123,11 @@ button {
   color: #fff;
   background: var(--accent);
   cursor: pointer;
+}
+
+.input-row button {
+  width: 100%;
+  height: 46px;
 }
 
 button:hover { background: var(--accent-dark); }
@@ -223,6 +228,5 @@ h2 {
   h1 { font-size: 24px; }
   h2 { font-size: 22px; }
 
-  .input-row { grid-template-columns: 1fr; }
   .empty-state, .not-found { min-height: 300px; }
 }
