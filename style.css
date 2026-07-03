@@ -53,21 +53,7 @@ body {
 
 .brand-row {
   display: flex;
-  gap: 14px;
   align-items: center;
-}
-
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 auto;
-}
-
-.eyebrow {
-  margin: 0 0 4px;
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 700;
 }
 
 h1 {
