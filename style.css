@@ -25,13 +25,13 @@ body {
 
 .app-shell {
   width: min(680px, calc(100% - 20px));
-  min-height: 100vh;
   margin: 0 auto;
   padding: 14px 0 24px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 4px;
   align-items: start;
+  align-content: start;
 }
 
 .search-panel,
@@ -42,12 +42,11 @@ body {
 }
 
 .search-panel {
-  padding: 16px;
+  padding: 16px 16px 12px;
   border-radius: 8px;
 }
 
 .result-panel {
-  min-height: 320px;
   padding: 16px;
   border-radius: 8px;
 }
@@ -141,28 +140,6 @@ button:hover { background: var(--accent-dark); }
 
 #copy-button:hover { background: #f1d7c6; }
 
-.empty-state,
-.not-found {
-  min-height: 280px;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 16px;
-  color: var(--muted);
-  text-align: center;
-}
-
-.empty-state img {
-  width: 136px;
-  height: 136px;
-}
-
-.not-found p {
-  margin: 0;
-  font-size: 20px;
-  color: var(--accent-dark);
-}
-
 .result-card {
   display: grid;
   gap: 18px;
@@ -220,13 +197,12 @@ h2 {
 
   .search-panel {
     position: static;
-    padding: 20px;
+    padding: 20px 20px 14px;
   }
 
-  .result-panel { padding: 20px; min-height: 360px; }
+  .result-panel { padding: 20px; }
 
   h1 { font-size: 24px; }
   h2 { font-size: 22px; }
 
-  .empty-state, .not-found { min-height: 300px; }
 }

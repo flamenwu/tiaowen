@@ -3,9 +3,8 @@ const byId = new Map(records.map((item) => [String(item.id).trim(), item]));
 
 const form = document.querySelector("#query-form");
 const input = document.querySelector("#query-input");
-const emptyState = document.querySelector("#empty-state");
+const resultPanel = document.querySelector("#result-panel");
 const resultCard = document.querySelector("#result-card");
-const notFound = document.querySelector("#not-found");
 const resultId = document.querySelector("#result-id");
 const resultText = document.querySelector("#result-text");
 const resultDetail = document.querySelector("#result-detail");
@@ -29,8 +28,7 @@ function renderDetail(detail) {
 }
 
 function showRecord(record) {
-  emptyState.hidden = true;
-  notFound.hidden = true;
+  resultPanel.hidden = false;
   resultCard.hidden = false;
   resultId.textContent = `编号 ${record.id}`;
   resultText.textContent = record.text || "";
@@ -40,23 +38,21 @@ function showRecord(record) {
   window.history.replaceState({}, "", url);
 }
 
-function showNotFound(id) {
-  emptyState.hidden = true;
+function showEmpty() {
+  resultPanel.hidden = true;
   resultCard.hidden = true;
-  notFound.hidden = false;
-  notFound.querySelector("p").textContent = id ? `没有找到编号 ${id}` : "请输入编号。";
 }
 
 function lookup(value) {
   const id = normalizeId(value);
   input.value = id;
   if (!id) {
-    showNotFound("");
+    showEmpty();
     return;
   }
   const record = byId.get(id);
   if (record) showRecord(record);
-  else showNotFound(id);
+  else showEmpty();
 }
 
 form.addEventListener("submit", (event) => {

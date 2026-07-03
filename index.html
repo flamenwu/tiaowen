@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>铁板神数条文查询</title>
+  <title>太华派铁板神数条文查询</title>
   <meta name="description" content="输入编号，查询铁板神数条文与详解。" />
   <link rel="stylesheet" href="style.css?v=20260703-mobile2" />
   <style>
     .app-shell {
       width: min(680px, calc(100% - 20px)) !important;
+      min-height: auto !important;
       grid-template-columns: 1fr !important;
-      gap: 12px !important;
+      gap: 4px !important;
+      align-content: start !important;
     }
 
     .search-panel {
@@ -29,7 +31,7 @@
         <img class="brand-mark" src="assets/seal.svg" alt="" />
         <div>
           <p class="eyebrow">条文检索</p>
-          <h1 id="page-title">铁板神数条文查询</h1>
+          <h1 id="page-title">太华派铁板神数条文查询</h1>
         </div>
       </div>
 
@@ -42,13 +44,8 @@
       </form>
     </section>
 
-    <section class="result-panel" aria-live="polite">
-      <div id="empty-state" class="empty-state">
-        <img src="assets/book.svg" alt="" />
-        <p>输入编号后，条文和详解会显示在这里。</p>
-      </div>
-
-      <article id="result-card" class="result-card" hidden>
+    <section id="result-panel" class="result-panel" aria-live="polite" hidden>
+      <article id="result-card" class="result-card">
         <div class="result-head">
           <p class="result-id" id="result-id"></p>
           <button type="button" id="copy-button" title="复制当前条文">复制</button>
@@ -56,10 +53,6 @@
         <h2 id="result-text"></h2>
         <div id="result-detail" class="detail-text"></div>
       </article>
-
-      <div id="not-found" class="not-found" hidden>
-        <p>没有找到这个编号。</p>
-      </div>
     </section>
   </main>
 
