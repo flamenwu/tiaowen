@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>太华派铁板神数条文查询</title>
   <meta name="description" content="输入编号，查询铁板神数条文与详解。" />
-  <link rel="stylesheet" href="style.css?v=20260703-mobile2" />
+  <link rel="stylesheet" href="style.css?v=20260718-qwen-ocr" />
   <style>
     .app-shell {
       width: min(680px, calc(100% - 20px)) !important;
@@ -40,13 +40,27 @@
           <button type="submit">查询</button>
         </div>
       </form>
+
+      <div class="camera-actions">
+        <button type="button" id="scan-button">拍照识别并调出条文</button>
+        <input id="scan-input" type="file" accept="image/*" capture="environment" hidden />
+        <p id="scan-status" class="scan-status" aria-live="polite">使用阿里千问 OCR 识别，照片仅用于本次编号提取。</p>
+        <img id="scan-preview" class="scan-preview" alt="已拍摄的纸张" hidden />
+        <form id="scan-manual-form" class="scan-manual-form" autocomplete="off" hidden>
+          <label for="scan-manual-input">手动确认编号</label>
+          <div class="input-row">
+            <input id="scan-manual-input" inputmode="numeric" placeholder="例如 1084 1567" />
+            <button type="submit">批量查询</button>
+          </div>
+        </form>
+      </div>
     </section>
 
     <section id="result-panel" class="result-panel" aria-live="polite" hidden>
       <article id="result-card" class="result-card">
         <div class="result-head">
           <p class="result-id" id="result-id"></p>
-          <button type="button" id="copy-button" title="复制当前条文">复制</button>
+          <button type="button" id="copy-button" title="复制后发给顾客">复制条文</button>
         </div>
         <h2 id="result-text"></h2>
         <div id="result-detail" class="detail-text"></div>
@@ -54,7 +68,8 @@
     </section>
   </main>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="config.js?v=20260718-qwen-ocr"></script>
+  <script src="data.js?v=20260718-guyi-jinjie"></script>
+  <script src="app.js?v=20260718-qwen-ocr"></script>
 </body>
 </html>

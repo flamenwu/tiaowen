@@ -1,0 +1,32 @@
+edition: 3.0.0
+name: tiaowen-ocr-api
+access: tiaowen-fc
+
+resources:
+  ocr_api:
+    component: fc3
+    props:
+      region: cn-hangzhou
+      functionName: tiaowen-ocr-api
+      description: 铁板神数条文阿里千问OCR安全接口
+      runtime: nodejs20
+      code: ./code
+      handler: index.handler
+      timeout: 120
+      memorySize: 512
+      cpu: 0.35
+      diskSize: 512
+      instanceConcurrency: 10
+      internetAccess: true
+      environmentVariables:
+        DASHSCOPE_API_KEY: ${env('DASHSCOPE_API_KEY')}
+      triggers:
+        - triggerName: http-trigger
+          triggerType: http
+          triggerConfig:
+            authType: anonymous
+            disableURLInternet: false
+            methods:
+              - GET
+              - POST
+              - OPTIONS
